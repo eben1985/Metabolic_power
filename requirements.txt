@@ -1,0 +1,15 @@
+
+numpy==1.25.1
+packaging==23.1
+pandas==2.0.3
+Pillow==9.5.0
+plotly==5.15.0
+protobuf==4.23.4
+python-dateutil==2.8.2
+requests==2.31.0
+streamlit==1.25.0
+toml==0.10.2
+toolz==0.12.0
+tornado==6.3.2
+urllib3==2.0.4
+watchdog==3.0.0
