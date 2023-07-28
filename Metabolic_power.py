@@ -23,8 +23,6 @@ def data_clean_calcs(uploaded_file):
     df['Savoia'] = df.apply(lambda row: savoia_formula(row['Velocity'], row['Acceleration']), axis=1)
     return df, session_name
     
-
-@st.cache_data
 def data_concat(data_frames):
     columns_to_drop = ['Odometer', 'Latitude', 'Longitude', 'Heart Rate', 'Player Load', 'Positional Quality (%)', 'HDOP', '#Sats']
     result_df = pd.concat(data_frames, ignore_index=True)
@@ -51,6 +49,8 @@ def main():
                 
             if len(data_frames) > 0:
                 result_df = data_concat(data_frames)
+                st.session_state.data = result_df
+                print()
                 # Display the concatenated DataFrame
                 st.subheader('Concatenated Report:')
                 with st.expander("Open to view concatenated data:"):
@@ -83,6 +83,7 @@ def main():
                     file_name=output_filename,
                     mime="text/csv"
                     )
+
     else:
         st.info("Please upload files.")
 
