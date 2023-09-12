@@ -32,7 +32,7 @@ def data_concat(data_frames):
 
 def main():
     st.set_page_config(layout='wide')
-    st.title('Metabolic Power Analysis')
+    st.title('MMetabolic Power Analysis')
 
     uploaded_files = st.file_uploader("Select all CSV files", type=["csv"], accept_multiple_files=True)
 
